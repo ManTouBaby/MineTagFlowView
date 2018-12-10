@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.hrw.tagflowlibrary.TagFlowView
+        android:id="@+id/tfv_show"
+        android:padding="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#343">
+
+    </com.hrw.tagflowlibrary.TagFlowView>
+</android.support.constraint.ConstraintLayout>
