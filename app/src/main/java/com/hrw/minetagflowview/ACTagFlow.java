@@ -40,6 +40,21 @@ public class ACTagFlow extends AppCompatActivity {
         strings.add("Android开发之深入浅出---");
         strings.add("Android英雄传---");
         strings.add("Android开发艺术---");
+        strings.add("物理+++");
+        strings.add("英语+++");
+        strings.add("动物世界+++");
+        strings.add("生物与科学+++");
+        strings.add("Android开发之深入浅出+++");
+        strings.add("Android英雄传+++");
+        strings.add("Android开发艺术+++");
+        strings.add("物理+++");
+        strings.add("英语+++");
+        strings.add("动物世界+++");
+        strings.add("生物与科学+++");
+        strings.add("Android开发之深入浅出+++");
+        strings.add("Android英雄传+++");
+        strings.add("Android开发艺术+++");
+
 
         tagFlowView.setAdapter(new TagAdapter<String>(strings) {
             @Override

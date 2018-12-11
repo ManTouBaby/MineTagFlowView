@@ -152,7 +152,7 @@ public class TagFlowView extends ViewGroup {
                         totalWidth += view.getMeasuredWidth();
                     }
                     int mm = getMeasuredWidth() - totalWidth - paddingLeft - paddingRight;
-                    viewHorizontalSpace = mm / (views.size() - 1);
+                     viewHorizontalSpace = mm / (views.size() - 1);
                     break;
             }
 
