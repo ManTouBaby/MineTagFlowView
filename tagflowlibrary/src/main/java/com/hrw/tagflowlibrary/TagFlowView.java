@@ -18,7 +18,8 @@ import java.util.Set;
  * @desc:
  */
 public class TagFlowView extends ViewGroup {
-    TagAdapter mTagAdapter;
+    private Context mContext;
+
 
     private int viewHorizontalSpace = 20;
     private int viewVerticalSpace = 20;
@@ -26,19 +27,21 @@ public class TagFlowView extends ViewGroup {
 //    private int viewSpace = 20;
 
 
-    List<View> views = new ArrayList<>();
     Map<Integer, List<View>> viewMap = new LinkedHashMap<>();
+    List<View> views = new ArrayList<>();
+    TagAdapter mTagAdapter;
 
     public TagFlowView(Context context) {
-        super(context);
+        this(context, null);
     }
 
     public TagFlowView(Context context, AttributeSet attrs) {
-        super(context, attrs);
+        this(context, attrs, 0);
     }
 
     public TagFlowView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        mContext = context;
     }
 
     @Override
@@ -152,7 +155,7 @@ public class TagFlowView extends ViewGroup {
                         totalWidth += view.getMeasuredWidth();
                     }
                     int mm = getMeasuredWidth() - totalWidth - paddingLeft - paddingRight;
-                     viewHorizontalSpace = mm / (views.size() - 1);
+                    viewHorizontalSpace = views.size() - 1 == 0 ? viewHorizontalSpace : mm / (views.size() - 1);
                     break;
             }
 
