@@ -6,7 +6,7 @@
     <com.hrw.tagflowlibrary.TagFlowView
         android:id="@+id/tfv_show"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="166dp"
         android:background="#343"
         android:padding="8dp">
 

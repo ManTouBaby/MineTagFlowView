@@ -2,6 +2,7 @@ package com.hrw.tagflowlibrary;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -18,7 +19,6 @@ import java.util.Set;
  * @desc:
  */
 public class TagFlowView extends ViewGroup {
-    private Context mContext;
 
 
     private int viewHorizontalSpace = 20;
@@ -41,7 +41,6 @@ public class TagFlowView extends ViewGroup {
 
     public TagFlowView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        mContext = context;
     }
 
     @Override
@@ -131,6 +130,54 @@ public class TagFlowView extends ViewGroup {
         }
     }
 
+    private float lastX;
+    private float lastY;
+
+    @Override
+    public boolean onInterceptTouchEvent(MotionEvent ev) {
+        boolean result = super.onInterceptTouchEvent(ev);
+        System.out.println("onInterceptTouchEvent:" + ev.getAction() + " result:" + result);
+        return result;
+    }
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        boolean result = super.dispatchTouchEvent(ev);
+        switch (ev.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+
+                break;
+            case MotionEvent.ACTION_MOVE:
+                break;
+            case MotionEvent.ACTION_UP:
+                break;
+
+        }
+        System.out.println("dispatchTouchEvent:" + ev.getAction() + " result:" + result);
+        return result;
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        boolean result = super.onTouchEvent(event);
+        System.out.println("onTouchEvent:" + event.getAction() + " result:" + result);
+        float x = event.getRawX();
+        float y = event.getRawY();
+//        System.out.println("x:" + x + " y:" + y);
+        switch (event.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                break;
+            case MotionEvent.ACTION_MOVE:
+                int middleX = (int) (x - event.getRawX());
+                int middleY = (int) (y - event.getRawY());
+//                System.out.println("x:" + x + " event.getRawX():" + event.getRawX() + " y:" + y + " event.getRawY():" + event.getRawY());
+//                scrollBy(middleX, middleY);
+                break;
+            case MotionEvent.ACTION_UP:
+                break;
+        }
+        return result;
+    }
 
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
