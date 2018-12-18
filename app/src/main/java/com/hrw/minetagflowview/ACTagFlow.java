@@ -3,6 +3,7 @@ package com.hrw.minetagflowview;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 
 import com.hrw.tagflowlibrary.OnTagMultipleSelectListener;
 import com.hrw.tagflowlibrary.TagFlowView;
@@ -69,6 +70,12 @@ public class ACTagFlow extends AppCompatActivity {
                 }
                 System.out.println("选中数据:" + stringBuffer.toString());
             }
-        }));
+        })).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                System.out.println("单击TagFlowView");
+            }
+        });
+
     }
 }

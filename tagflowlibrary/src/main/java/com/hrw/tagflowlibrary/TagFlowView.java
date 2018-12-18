@@ -130,8 +130,8 @@ public class TagFlowView extends ViewGroup {
         }
     }
 
-    private float lastX;
-    private float lastY;
+    private float firstX;
+    private float firstY;
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
@@ -141,19 +141,21 @@ public class TagFlowView extends ViewGroup {
     }
 
     @Override
-    public boolean dispatchTouchEvent(MotionEvent ev) {
-        boolean result = super.dispatchTouchEvent(ev);
-        switch (ev.getAction()) {
+    public boolean dispatchTouchEvent(MotionEvent event) {
+        boolean result = super.dispatchTouchEvent(event);
+        switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
-
+                firstX = event.getX();
+                firstY = event.getY();
                 break;
             case MotionEvent.ACTION_MOVE:
+//                result = true;
                 break;
             case MotionEvent.ACTION_UP:
                 break;
 
         }
-        System.out.println("dispatchTouchEvent:" + ev.getAction() + " result:" + result);
+        System.out.println("dispatchTouchEvent:" + event.getAction() + " result:" + result);
         return result;
     }
 
